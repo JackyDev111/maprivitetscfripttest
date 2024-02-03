@@ -4,7 +4,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 --------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
     Title = "HPMH Hub",
-    SubTitle = "by Por Moui Ver Hmong V.1 Beta",
+    SubTitle = "by Hapor Dev - Beta Version",
     TabWidth = 160,
     Size = UDim2.fromOffset(600, 350),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
@@ -2383,12 +2383,12 @@ local posZ = 0
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Create Tabs
     Tabs.Main:AddParagraph({
-        Title = "Ua liaj ua teb",
-        Content = "Auto Ua liaj ua teb"
+        Title = "Farm Section",
+        Content = "Auto Farm and More"
     })
 
     local DropdownSelectWeapon = Tabs.Main:AddDropdown("DropdownSelectWeapon", {
-        Title = "Dropdown",
+        Title = "Select Weapon",
         Values = {'Melee','Sword','Blox Fruit'},
         Multi = false,
         Default = 1,
@@ -2438,7 +2438,7 @@ local posZ = 0
     end)
 
 
-    local ToggleAutoFarmLevel = Tabs.Main:AddToggle("ToggleAutoFarmLevel", {Title = "Auto Qib ua liaj ua teb (Lvl)", Default = false })
+    local ToggleAutoFarmLevel = Tabs.Main:AddToggle("ToggleAutoFarmLevel", {Title = "Auto Farm Level", Default = false })
     ToggleAutoFarmLevel:OnChanged(function(Value)
         _G.AutoLevel = Value
     end)
@@ -2504,7 +2504,7 @@ local posZ = 0
         game:GetService("ReplicatedStorage").Effect.Container.Respawn:Destroy()
     end
 
-    local ToggleMobAura = Tabs.Main:AddToggle("ToggleMobAura", {Title = "Auto Nyob ze Mob (Near Mob)", Default = false })
+    local ToggleMobAura = Tabs.Main:AddToggle("ToggleMobAura", {Title = "Auto Farm Mob Aura", Default = false })
     ToggleMobAura:OnChanged(function(Value)
         _G.AutoNear = Value
     end)
@@ -2540,8 +2540,8 @@ local posZ = 0
       end)
 
       Tabs.Main:AddButton({
-        Title = "txhiv tag nrho cov code (x2 exp)",
-        Description = "Rub tawm tag nrho cov lej x2 exp",
+        Title = "Redeem Exp x2 Codes",
+        Description = "Redeem code that gaves you advantages to grind.",
         Callback = function()
             UseCode()
         end
@@ -2550,14 +2550,28 @@ local posZ = 0
     function UseCode(Text)
         game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(Text)
     end
+    UseCode("NEWTROLL")
+    UseCode("SECRET_ADMIN")
+    UseCode("KITT_RESET")
+    UseCode("ADMIN_TROLL")
+    UseCode("CHANDLER")
+    UseCode("SUB2CAPTIANMAUI")
+    UseCode("kittgaming")
     UseCode("Sub2Fer999")
     UseCode("Enyu_is_Pro")
     UseCode("Magicbus")
     UseCode("JCWK")
     UseCode("Starcodeheo")
     UseCode("Bluxxy")
+    UseCode("fudd10_v2")
     UseCode("THEGREATACE")
+    UseCode("SUB2GAMERROBOT_RESET1")
     UseCode("SUB2GAMERROBOT_EXP1")
+    UseCode("Sub2NoobMaster123")
+    UseCode("Sub2UncleKizaru")
+    UseCode("Sub2Daigrock")
+    UseCode("Bignews")
+    UseCode("TheGreatAce")
     UseCode("StrawHatMaine")
     UseCode("Sub2OfficialNoobie")
     UseCode("SUB2NOOBMASTER123")
@@ -2569,8 +2583,8 @@ local posZ = 0
 
 
     Tabs.Main:AddButton({
-        Title = "Fps nce (fps+)",
-        Description = "Boost koj fps",
+        Title = "Boost your FPS",
+        Description = "Remove unnecessary game material.",
         Callback = function()
             FPSBooster()
         end
@@ -2622,11 +2636,11 @@ local posZ = 0
 --Mastery
     Tabs.Main:AddParagraph({
         Title = "Mastery Farm",
-        Content = "Auto farm your mastery"
+        Content = "Auto Farm Your Mastery"
     })
 
     local DropdownMastery = Tabs.Main:AddDropdown("DropdownMastery", {
-        Title = "Hom ua liaj ua teb (modefarm)",
+        Title = "Select Mode Farm",
         Values = {"Level","Near Mobs",},
         Multi = false,
         Default = 1,
@@ -2638,13 +2652,13 @@ local posZ = 0
         TypeMastery = Value
     end)
 
-    local ToggleMasteryFruit = Tabs.Main:AddToggle("ToggleMasteryFruit", {Title = "Auto BF Txawj ntse (masbf)", Default = false })
+    local ToggleMasteryFruit = Tabs.Main:AddToggle("ToggleMasteryFruit", {Title = "Auto Farm Mas BF", Default = false })
     ToggleMasteryFruit:OnChanged(function(Value)
         AutoFarmMasDevilFruit = Value
     end)
     Options.ToggleMasteryFruit:SetValue(false)
 
-    local ToggleMasteryGun = Tabs.Main:AddToggle("ToggleMasteryGun", {Title = "Auto Phom Txawj ntse (masgun)", Default = false })
+    local ToggleMasteryGun = Tabs.Main:AddToggle("ToggleMasteryGun", {Title = "Auto Farm Mas Gun", Default = false })
     ToggleMasteryGun:OnChanged(function(Value)
         AutoFarmMasGun = Value
     end)
@@ -2654,8 +2668,8 @@ local posZ = 0
 
     KillPercent = 40
     local SliderHealt = Tabs.Main:AddSlider("SliderHealt", {
-        Title = "Kev noj qab haus huv % (hp%)",
-        Description = "Kev noj qab haus huv rau kev txawj ntse",
+        Title = "Select HP %",
+        Description = "Choose how many percent left of health will let the fruit get mas.",
         Default = 40,
         Min = 0,
         Max = 100,
@@ -3165,11 +3179,11 @@ end)
 
 
 Tabs.Main:AddParagraph({
-    Title = "Lwm yam Farm",
-    Content = "Pob txha & ncuav mog qab zib Prince"
+    Title = "Farm Miscellaneous",
+    Content = "Farm Bone, Katakuri (CakePrince) and More."
 })
 
-local ToggleBone = Tabs.Main:AddToggle("ToggleBone", {Title = "Auto Farm Pob Txha (bone)", Default = false })
+local ToggleBone = Tabs.Main:AddToggle("ToggleBone", {Title = "Auto Farm Bone", Default = false })
 ToggleBone:OnChanged(function(Value)
     _G.AutoBone = Value
 end)
@@ -3240,7 +3254,7 @@ spawn(function()
 end)
 
 
-local ToggleCake = Tabs.Main:AddToggle("ToggleCake", {Title = "Auto Farm Ncuav mog qab zib Prince (katakuri)", Default = false })
+local ToggleCake = Tabs.Main:AddToggle("ToggleCake", {Title = "Auto Farm Katakuri (CakePrince)", Default = false })
 ToggleCake:OnChanged(function(Value)
     _G.CakePrince = Value
    end)
@@ -3319,7 +3333,7 @@ ToggleCake:OnChanged(function(Value)
        end)
 
 
-    local ToggleVatChatKiDi = Tabs.Main:AddToggle("ToggleVatChatKiDi", {Title = "Auto Ua liaj ua teb Ectoplasm", Default = false })
+    local ToggleVatChatKiDi = Tabs.Main:AddToggle("ToggleVatChatKiDi", {Title = "Auto Farm Ectoplasm", Default = false })
     ToggleVatChatKiDi:OnChanged(function(Value)
         _G.Ecto = Value
     end)
@@ -3371,8 +3385,8 @@ ToggleCake:OnChanged(function(Value)
 
 
     Tabs.Main:AddParagraph({
-        Title = "Tus thawj coj Ua liaj ua teb",
-        Content = ""
+        Title = "Farm Boss",
+        Content = "Farm Boss to get item or quest"
     })
 
 
@@ -3388,7 +3402,7 @@ ToggleCake:OnChanged(function(Value)
 
 
     local DropdownBoss = Tabs.Main:AddDropdown("DropdownBoss", {
-        Title = "Dropdown",
+        Title = "Select Boss",
         Values = tableBoss,
         Multi = false,
         Default = 1,
@@ -3400,7 +3414,7 @@ ToggleCake:OnChanged(function(Value)
     end)
 
 
-	local ToggleAutoFarmBoss = Tabs.Main:AddToggle("ToggleAutoFarmBoss", {Title = "Tua Boss (killboss)", Default = false })
+	local ToggleAutoFarmBoss = Tabs.Main:AddToggle("ToggleAutoFarmBoss", {Title = "Kill Boss", Default = false })
 
     ToggleAutoFarmBoss:OnChanged(function(Value)
 		_G.AutoBoss = Value
@@ -3479,8 +3493,8 @@ ToggleCake:OnChanged(function(Value)
 
 
     Tabs.Main:AddParagraph({
-        Title = "Khoom siv",
-        Content = "Auto cov khoom ua liaj ua teb"
+        Title = "Farm Material",
+        Content = "Farm Material for advantages."
     })
 
     if First_Sea then
@@ -3496,7 +3510,7 @@ ToggleCake:OnChanged(function(Value)
         end
 
     local DropdownMaterial = Tabs.Main:AddDropdown("DropdownMaterial", {
-        Title = "Dropdown",
+        Title = "Select Material",
         Values = MaterialList,
         Multi = false,
         Default = 1,
@@ -3565,12 +3579,12 @@ ToggleCake:OnChanged(function(Value)
 if Third_Sea then
 
       Tabs.Main:AddParagraph({
-        Title = "Hiav txwv ntxhib",
-        Content = "Auto Hiav txwv ntxhib"
+        Title = "Farm Sea Event",
+        Content = "Auto Farm Sea Event to get new item."
     })
 
 
-    local ToggleBoat = Tabs.Main:AddToggle("ToggleBoat", {Title = "Auto Yuav Nkoj (buyboat)", Default = false })
+    local ToggleBoat = Tabs.Main:AddToggle("ToggleBoat", {Title = "Auto Buy Boat", Default = false })
 
     ToggleBoat:OnChanged(function(Value)
         _G.AutoBuyBoat = Value
@@ -3651,7 +3665,7 @@ if Third_Sea then
     end)
 
 
-   local ToggleTW = Tabs.Main:AddToggle("ToggleTW", {Title = "Auto Nias W (pressw)", Default = false })
+   local ToggleTW = Tabs.Main:AddToggle("ToggleTW", {Title = "Auto Drive Boat", Default = false })
 
    ToggleTW:OnChanged(function(Value)
     _G.AutoW = Value
@@ -3669,7 +3683,7 @@ if Third_Sea then
     
 
 
-    local ToggleTerrorshark = Tabs.Main:AddToggle("ToggleTerrorshark", {Title = "Auto Tua Terrorshark", Default = false })
+    local ToggleTerrorshark = Tabs.Main:AddToggle("ToggleTerrorshark", {Title = "Include TerrorShark (Kill)", Default = false })
 
     ToggleTerrorshark:OnChanged(function(Value)
         _G.AutoTerrorshark = Value
@@ -3709,7 +3723,7 @@ if Third_Sea then
 
 
 
-     local TogglePiranha = Tabs.Main:AddToggle("TogglePiranha", {Title = "Auto Kill Tua Piranha", Default = false })
+     local TogglePiranha = Tabs.Main:AddToggle("TogglePiranha", {Title = "Include Piranha (Kill)", Default = false })
 
      TogglePiranha:OnChanged(function(Value)
         _G.farmpiranya = Value
@@ -3751,12 +3765,12 @@ if Third_Sea then
 
 
      Tabs.Main:AddParagraph({
-        Title = "Cov neeg tseem ceeb Hunter",
-        Content = "Nws pib nrhiav thiab tua tus thawj coj cov neeg tseem ceeb"
+        Title = "Farm Elite Hunter",
+        Content = "Farm Elite to get items/fragments/legendary items and more"
     })
 
 
-    local ToggleElite = Tabs.Main:AddToggle("ToggleElite", {Title = "Auto Cov neeg tseem ceeb Hunter (elitekill)", Default = false })
+    local ToggleElite = Tabs.Main:AddToggle("ToggleElite", {Title = "Auto Kill Elite", Default = false })
 
     ToggleElite:OnChanged(function(Value)
        _G.AutoElite = Value
@@ -3828,12 +3842,12 @@ if Third_Sea then
 if Third_Sea then
 
        Tabs.Main:AddParagraph({
-        Title = "Hiav txwv Beast",
-        Content = "Auto Kill Hiav txwv Beast"
+        Title = "Farm Sea Beast",
+        Content = "Farm Seabeast for Money/Fragments/Quest"
     })
 
 
-local ToggleSeaBeAst = Tabs.Main:AddToggle("ToggleSeaBeAst", {Title = "Auto Hiav txwv Beast (killseabeast)", Default = false })
+local ToggleSeaBeAst = Tabs.Main:AddToggle("ToggleSeaBeAst", {Title = "Auto Kill Sea Beast", Default = false })
 
 ToggleSeaBeAst:OnChanged(function(Value)
     _G.AutoSeaBeast = Value
@@ -3966,7 +3980,7 @@ ToggleSeaBeAst:OnChanged(function(Value)
         end
     end)
 
-local ToggleAutoW = Tabs.Main:AddToggle("ToggleAutoW", {Title = "Auto Nias W (pressw)", Default = false })
+local ToggleAutoW = Tabs.Main:AddToggle("ToggleAutoW", {Title = "Auto Drive Boat", Default = false })
 ToggleAutoW:OnChanged(function(Value)
     _G.AutoW = Value
     end)
@@ -3986,12 +4000,12 @@ ToggleAutoW:OnChanged(function(Value)
 
  Tabs.Main:AddParagraph({
     Title = "Mirage Island",
-    Content = "Nws pib Summon Mystic Island"
+    Content = "Find Mirage Island for advantages."
 })
 
 
 
-local ToggleMirage = Tabs.Main:AddToggle("ToggleMirage", {Title = "Auto Mirage Island", Default = false })
+local ToggleMirage = Tabs.Main:AddToggle("ToggleMirage", {Title = "Find Mirage Island", Default = false })
 ToggleMirage:OnChanged(function(Value)
     if state then
         _G.dao = true
@@ -4057,7 +4071,7 @@ end)
  Options.ToggleMirage:SetValue(false)
 
 
- local AutoW = Tabs.Main:AddToggle("AutoW", {Title = "Auto Nias W (pressw)", Default = false })
+ local AutoW = Tabs.Main:AddToggle("AutoW", {Title = "Auto Drive Boat", Default = false })
  AutoW:OnChanged(function(Value)
     _G.AutoW = Value
      end)
@@ -4080,7 +4094,7 @@ end
     })
 
 
-    local ToggleHallow = Tabs.Main:AddToggle("ToggleHallow", {Title = "Nws pib Hallow Scythe [Fullly]", Default = false })
+    local ToggleHallow = Tabs.Main:AddToggle("ToggleHallow", {Title = "Auto Get Hallow Scythe [Fully]", Default = false })
 
     ToggleHallow:OnChanged(function(Value)
         AutoHallowSycthe = Value
@@ -4135,7 +4149,7 @@ end
            end)
         
            
-           local ToggleYama = Tabs.Main:AddToggle("ToggleYama", {Title = "Auto Tau Yama", Default = false })
+           local ToggleYama = Tabs.Main:AddToggle("ToggleYama", {Title = "Auto Get Yama", Default = false })
            ToggleYama:OnChanged(function(Value)
             _G.AutoYama = Value
            end)
@@ -4301,7 +4315,7 @@ end
 
 
 
-        local ToggleFactory = Tabs.Main:AddToggle("ToggleFactory", {Title = "Auto Ua liaj ua teb (factory)", Default = false })
+        local ToggleFactory = Tabs.Main:AddToggle("ToggleFactory", {Title = "Auto Farm Factory", Default = false })
         ToggleFactory:OnChanged(function(Value)
             _G.Factory = Value
         end)
@@ -4348,11 +4362,11 @@ end
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Setting
     Tabs.Setting:AddParagraph({
-        Title = "Kev teeb tsa",
-        Content = "Teeb tsa ua liaj ua teb"
+        Title = "Setting Section #1",
+        Content = "Adjust your settings in this section."
     })
 
-    local ToggleFastAttack = Tabs.Setting:AddToggle("ToggleFastAttack", {Title = "Ceev Attack", Default = true })
+    local ToggleFastAttack = Tabs.Setting:AddToggle("ToggleFastAttack", {Title = "Fast Attack", Default = true })
     ToggleFastAttack:OnChanged(function(vu)
         FastAttack = vu
     end)
@@ -4361,7 +4375,9 @@ end
 
 
 
-_G.FastAttackDelay = 0.13
+_G.FastAttackDelay = 0.1 -- Test 0.1 Attack Speed if kick or not
+
+-- Default is 0.13 if not work use 0.13 instead
 
     local Client = game.Players.LocalPlayer
     local STOP = require(Client.PlayerScripts.CombatFramework.Particle)
@@ -4450,7 +4466,7 @@ CamShake:Stop()
 
 
 
-    local ToggleBringMob = Tabs.Setting:AddToggle("ToggleBringMob", {Title = "Nqa Mob", Default = true })
+    local ToggleBringMob = Tabs.Setting:AddToggle("ToggleBringMob", {Title = "Bring Mob", Default = true })
     ToggleBringMob:OnChanged(function(Value)
         BringMobs = Value
     end)
@@ -4503,7 +4519,7 @@ CamShake:Stop()
 
 
 
-    local ToggleBypassTP = Tabs.Setting:AddToggle("ToggleBypassTP", {Title = "Bypass Tp", Default = false })
+    local ToggleBypassTP = Tabs.Setting:AddToggle("ToggleBypassTP", {Title = "Reset to TP", Default = false })
     ToggleBypassTP:OnChanged(function(Value)
         BypassTP = Value
     end)
@@ -4512,7 +4528,7 @@ end
 
 
 
-local ToggleRemove = Tabs.Setting:AddToggle("ToggleRemove", {Title = "Tshem cov ntawv puas (rmdmg)", Default = true })
+local ToggleRemove = Tabs.Setting:AddToggle("ToggleRemove", {Title = "Remove Damage Text (DO NOT USE, BUG!)", Default = true })
 ToggleRemove:OnChanged(function(Value)
     FaiFaoRemovetext = Value
     end)
@@ -4531,38 +4547,38 @@ ToggleRemove:OnChanged(function(Value)
 
 
 Tabs.Setting:AddParagraph({
-    Title = "Kev teeb tsa txuj ci",
-    Content = "Kev siv txuj ci rau kev ua liaj ua teb"
+    Title = "Choose Skill",
+    Content = "Choose your skill for mas farm"
 })
 
-local ToggleZ = Tabs.Setting:AddToggle("ToggleZ", {Title = "Kev txawj ntse Z", Default = true })
+local ToggleZ = Tabs.Setting:AddToggle("ToggleZ", {Title = "Skill Z", Default = true })
 ToggleZ:OnChanged(function(Value)
     SkillZ = Value
 end)
 Options.ToggleZ:SetValue(true)
 
-local ToggleX = Tabs.Setting:AddToggle("ToggleX", {Title = "Kev txawj ntsel X", Default = true })
+local ToggleX = Tabs.Setting:AddToggle("ToggleX", {Title = "Skilll X", Default = true })
 ToggleX:OnChanged(function(Value)
     SkillX = Value
 end)
 Options.ToggleX:SetValue(true)
 
 
-local ToggleC = Tabs.Setting:AddToggle("ToggleC", {Title = "Kev txawj ntse C", Default = true })
+local ToggleC = Tabs.Setting:AddToggle("ToggleC", {Title = "Skill C", Default = true })
 ToggleC:OnChanged(function(Value)
     SkillC = Value
 end)
 Options.ToggleC:SetValue(true)
 
 
-local ToggleV = Tabs.Setting:AddToggle("ToggleV", {Title = "Kev txawj ntse V", Default = true })
+local ToggleV = Tabs.Setting:AddToggle("ToggleV", {Title = "Skill V", Default = true })
 ToggleV:OnChanged(function(Value)
     SkillV = Value
 end)
 Options.ToggleV:SetValue(true)
 
 
-local ToggleF = Tabs.Setting:AddToggle("ToggleF", {Title = "Kev txawj ntse F", Default = true })
+local ToggleF = Tabs.Setting:AddToggle("ToggleF", {Title = "Skill F", Default = true })
 ToggleF:OnChanged(function(Value)
    SkillF = Value
     end)
@@ -4570,7 +4586,13 @@ Options.ToggleF:SetValue(true)
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Stats
-local ToggleMelee = Tabs.Stats:AddToggle("ToggleMelee", {Title = "Auto Melee", Default = false })
+
+Tabs.Stats:AddParagraph({
+    Title = "Auto Add Stats",
+    Content = "Adjust which stat to auto add points init."
+})
+
+local ToggleMelee = Tabs.Stats:AddToggle("ToggleMelee", {Title = "Auto Add Stat Melee", Default = false })
 ToggleMelee:OnChanged(function(Value)
     _G.Auto_Stats_Melee = Value
     end)
@@ -4579,7 +4601,7 @@ Options.ToggleMelee:SetValue(false)
 
 
 
-local ToggleDe = Tabs.Stats:AddToggle("ToggleDe", {Title = "Auto Defense", Default = false })
+local ToggleDe = Tabs.Stats:AddToggle("ToggleDe", {Title = "Auto Add Stat Defense", Default = false })
 ToggleDe:OnChanged(function(Value)
     _G.Auto_Stats_Defense = Value
     end)
@@ -4587,7 +4609,7 @@ Options.ToggleDe:SetValue(false)
 
 
 
-local ToggleSword = Tabs.Stats:AddToggle("ToggleSword", {Title = "Auto Sword", Default = false })
+local ToggleSword = Tabs.Stats:AddToggle("ToggleSword", {Title = "Auto Add Stat Sword", Default = false })
 ToggleSword:OnChanged(function(Value)
     _G.Auto_Stats_Sword = Value
     end)
@@ -4595,14 +4617,14 @@ Options.ToggleSword:SetValue(false)
 
 
 
-local ToggleGun = Tabs.Stats:AddToggle("ToggleGun", {Title = "Auto Gun", Default = false })
+local ToggleGun = Tabs.Stats:AddToggle("ToggleGun", {Title = "Auto Add Stat Gun", Default = false })
 ToggleGun:OnChanged(function(Value)
     _G.Auto_Stats_Gun = Value
     end)
 Options.ToggleGun:SetValue(false)
 
 
-local ToggleFruit = Tabs.Stats:AddToggle("ToggleFruit", {Title = "Auto Demon Fruit", Default = false })
+local ToggleFruit = Tabs.Stats:AddToggle("ToggleFruit", {Title = "Auto Add Stat Devil Fruit", Default = false })
 ToggleFruit:OnChanged(function(Value)
     _G.Auto_Stats_Devil_Fruit = Value
     end)
@@ -4683,13 +4705,18 @@ end)
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Player
 
+Tabs.Player:AddParagraph({
+    Title = "Player Section"
+    Content = "Player Functions."
+})
+
 local Playerslist = {}
 for i,v in pairs(game:GetService("Players"):GetChildren()) do
     table.insert(Playerslist,v.Name)
 end
 
 local SelectedPly = Tabs.Player:AddDropdown("SelectedPly", {
-    Title = "Dropdown",
+    Title = "Player in Server List",
     Values = Playerslist,
     Multi = false,
     Default = 1,
@@ -4702,8 +4729,8 @@ end)
 
     
 Tabs.Player:AddButton({
-    Title = "Refresh Dropdown",
-    Description = "Hloov cov npe player",
+    Title = "Refresh Player List",
+    Description = "Refresh Player List in the server",
     Callback = function()
         Playerslist = {}
         SelectedPly:Clear()
@@ -4713,7 +4740,7 @@ Tabs.Player:AddButton({
     end          
 })
 
-local ToggleTeleport = Tabs.Player:AddToggle("ToggleTeleport", {Title = "Teleport rau Player", Default = false })
+local ToggleTeleport = Tabs.Player:AddToggle("ToggleTeleport", {Title = "Teleport to Player You Selected", Default = false })
 ToggleTeleport:OnChanged(function(Value)
     _G.TeleportPly = Value
     pcall(function()
@@ -4727,7 +4754,7 @@ Options.ToggleTeleport:SetValue(false)
 
 
 
-local ToggleQuanSat = Tabs.Player:AddToggle("ToggleQuanSat", {Title = "Saib ntawm Player", Default = false })
+local ToggleQuanSat = Tabs.Player:AddToggle("ToggleQuanSat", {Title = "Spectate the Player You Selected", Default = false })
 ToggleQuanSat:OnChanged(function(Value)
     SpectatePlys = Value
     local plr1 = game:GetService("Players").LocalPlayer.Character.Humanoid
@@ -4743,12 +4770,12 @@ Options.ToggleQuanSat:SetValue(false)
 -----------------------------------------------------------------------------------------------------------------------------------------------
 --Teleport
 Tabs.Teleport:AddParagraph({
-    Title = "Ntiaj teb",
-    Content = "Sea1 & Sea2 & Sea3"
+    Title = "Teleport Sea",
+    Content = "You can instanly tp to Sea 1, 2 or 3."
 })
 
 Tabs.Teleport:AddButton({
-    Title = "Thawj Hiav Txwv (sea1)",
+    Title = "Teleport to East Blue",
     Description = "",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelMain")
@@ -4758,7 +4785,7 @@ Tabs.Teleport:AddButton({
 
 
 Tabs.Teleport:AddButton({
-    Title = "Ob Hiav Txwv (sea2)",
+    Title = "Teleport to Dressrosa",
     Description = "",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
@@ -4768,7 +4795,7 @@ Tabs.Teleport:AddButton({
 
 
 Tabs.Teleport:AddButton({
-    Title = "Peb Hiav Txwv (sea3)",
+    Title = "Teleport to Zou",
     Description = "",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
@@ -4778,8 +4805,8 @@ Tabs.Teleport:AddButton({
 
 
 Tabs.Teleport:AddParagraph({
-    Title = "Island",
-    Content = "Teleport rau Island"
+    Title = "Island Teleportation",
+    Content = "Teleport to any island you selected."
 })
 
 if First_Sea then
@@ -4983,7 +5010,7 @@ end
 _G.SelectFruit = ""
 
 local DropdownFruit = Tabs.Fruit:AddDropdown("DropdownFruit", {
-    Title = "Dropdown",
+    Title = "Select Fruit",
     Values = Table_DevilFruitSniper,
     Multi = false,
     Default = 1,
@@ -4996,7 +5023,7 @@ DropdownFruit:OnChanged(function(Value)
 end)
 
 
-local ToggleFruit = Tabs.Fruit:AddToggle("ToggleFruit", {Title = "Yuav Txiv Hmab Txiv Ntoo Sniper (snipefruit)", Default = false })
+local ToggleFruit = Tabs.Fruit:AddToggle("ToggleFruit", {Title = "Auto Snipe Fruit", Default = false })
 ToggleFruit:OnChanged(function(Value)
     _G.AutoBuyFruitSniper = Value
 end)
@@ -5013,7 +5040,7 @@ spawn(function()
 end)
 
 
-local ToggleStore = Tabs.Fruit:AddToggle("ToggleStore", {Title = "Khaws Txiv Ntoo (storefruit)", Default = false })
+local ToggleStore = Tabs.Fruit:AddToggle("ToggleStore", {Title = "Auto Store Fruit", Default = false })
 ToggleStore:OnChanged(function(Value)
     _G.AutoStoreFruit = Value
 end)
@@ -5136,7 +5163,7 @@ spawn(function()
 
 
 
-local ToggleRandomFruit = Tabs.Fruit:AddToggle("ToggleRandomFruit", {Title = "Random Txiv Hmab Txiv Ntoo (ranfruit)", Default = false })
+local ToggleRandomFruit = Tabs.Fruit:AddToggle("ToggleRandomFruit", {Title = "Auto Random Fruit", Default = false })
 ToggleRandomFruit:OnChanged(function(Value)
     _G.Random_Auto = Value
 end)
@@ -5151,7 +5178,7 @@ spawn(function()
     end)
 end)
 
-local ToggleCollect = Tabs.Fruit:AddToggle("ToggleCollect", {Title = "Sau Devil Fruit (collectdvlfruit)", Default = false })
+local ToggleCollect = Tabs.Fruit:AddToggle("ToggleCollect", {Title = "Auto TP to Fruit", Default = false })
 ToggleCollect:OnChanged(function(Value)
     _G.Tweenfruit = Value
 end)
@@ -5170,12 +5197,12 @@ end
 end)
 
 Tabs.Fruit:AddParagraph({
-    Title = "Esp",
-    Content = ""
+    Title = "ESP Section",
+    Content = "You will an extra view using ESP."
 })
 
 
-local ToggleEspPlayer = Tabs.Fruit:AddToggle("ToggleEspPlayer", {Title = "Esp Player", Default = false })
+local ToggleEspPlayer = Tabs.Fruit:AddToggle("ToggleEspPlayer", {Title = "ESP Player", Default = false })
 
 ToggleEspPlayer:OnChanged(function(Value)
     ESPPlayer = Value
@@ -5184,7 +5211,7 @@ end)
 Options.ToggleEspPlayer:SetValue(false)
 
 
-local ToggleEspFruit = Tabs.Fruit:AddToggle("ToggleEspFruit", {Title = "Esp esp dab ntxwg nyoog txiv hmab txiv ntoo (espdvlfruit)", Default = false })
+local ToggleEspFruit = Tabs.Fruit:AddToggle("ToggleEspFruit", {Title = "ESP Devil Fruit", Default = false })
 
 ToggleEspFruit:OnChanged(function(Value)
     DevilFruitESP = Value
@@ -5197,7 +5224,7 @@ Options.ToggleEspFruit:SetValue(false)
 
 
 
-local ToggleEspIsland = Tabs.Fruit:AddToggle("ToggleEspIsland", {Title = "Esp kob (espisland)", Default = false })
+local ToggleEspIsland = Tabs.Fruit:AddToggle("ToggleEspIsland", {Title = "ESP Island", Default = false })
 
 ToggleEspIsland:OnChanged(function(Value)
     IslandESP = Value
@@ -5208,7 +5235,7 @@ end)
 Options.ToggleEspIsland:SetValue(false)
 
 
-local ToggleEspFlower = Tabs.Fruit:AddToggle("ToggleEspFlower", {Title = "Esp paj (espflower)", Default = false })
+local ToggleEspFlower = Tabs.Fruit:AddToggle("ToggleEspFlower", {Title = "ESP Flower", Default = false })
 
 ToggleEspFlower:OnChanged(function(Value)
     FlowerESP = Value
@@ -5251,7 +5278,7 @@ end)
 local Chips = {"Flame","Ice","Quake","Light","Dark","Spider","Rumble","Magma","Buddha","Sand","Phoenix","Dough"}
 
 local DropdownRaid = Tabs.Raid:AddDropdown("DropdownRaid", {
-    Title = "Dropdown",
+    Title = "Select Dungeon",
     Values = Chips,
     Multi = false,
     Default = 1,
@@ -5261,7 +5288,7 @@ DropdownRaid:OnChanged(function(Value)
     SelectChip = Value
 end)
 
-local ToggleBuy = Tabs.Raid:AddToggle("ToggleBuy", {Title = "Yuav Chip (buychip)", Default = false })
+local ToggleBuy = Tabs.Raid:AddToggle("ToggleBuy", {Title = "Buy Chip", Default = false })
 ToggleBuy:OnChanged(function(Value)
     _G.Auto_Buy_Chips_Dungeon = Value
 end)
@@ -5282,7 +5309,7 @@ spawn(function()
 end)
 
 
-    local ToggleStart = Tabs.Raid:AddToggle("ToggleStart", {Title = "Pib Raid (startraid)", Default = false })
+    local ToggleStart = Tabs.Raid:AddToggle("ToggleStart", {Title = "Start Raid", Default = false })
     ToggleStart:OnChanged(function(Value)
         _G.Auto_StartRaid = Value
 end)
@@ -5307,7 +5334,7 @@ spawn(function()
 end)
 
 
-local ToggleKillAura = Tabs.Raid:AddToggle("ToggleKillAura", {Title = "Tua Aura (killaura)", Default = false })
+local ToggleKillAura = Tabs.Raid:AddToggle("ToggleKillAura", {Title = "Kill Aura", Default = false })
 ToggleKillAura:OnChanged(function(Value)
     KillAura = Value
 end)
@@ -5331,7 +5358,7 @@ spawn(function()
 end)
 
 
-local ToggleNextIsland = Tabs.Raid:AddToggle("ToggleNextIsland", {Title = "Tom ntej no kob (nextisland)", Default = false })
+local ToggleNextIsland = Tabs.Raid:AddToggle("ToggleNextIsland", {Title = "Auto Next Island", Default = false })
 ToggleNextIsland:OnChanged(function(Value)
     AutoNextIsland = Value
 end)
@@ -5360,7 +5387,7 @@ end)
 
 
 
-local ToggleAwake = Tabs.Raid:AddToggle("ToggleAwake", {Title = "Auto Awake", Default = false })
+local ToggleAwake = Tabs.Raid:AddToggle("ToggleAwake", {Title = "Auto Awake Fruit", Default = false })
 ToggleAwake:OnChanged(function(Value)
     AutoAwakenAbilities = Value
 end)
@@ -5376,7 +5403,7 @@ spawn(function()
 end)
 
 
-local ToggleGetFruit = Tabs.Raid:AddToggle("ToggleGetFruit", {Title = "Tau txiv hmab txiv ntoo qis (lowbelyfruitonly)", Default = false })
+local ToggleGetFruit = Tabs.Raid:AddToggle("ToggleGetFruit", {Title = "Only use low beli fruit", Default = false })
 ToggleGetFruit:OnChanged(function(Value)
     _G.Autofruit = Value
 end)
@@ -5552,12 +5579,12 @@ end
 
 
 Tabs.Raid:AddParagraph({
-    Title = "Raid Law",
-    Content = ""
+    Title = "Raid Misc",
+    Content = "Raid Law"
 })
 
 
-local ToggleLaw = Tabs.Raid:AddToggle("ToggleLaw", {Title = "Auto Law", Default = false })
+local ToggleLaw = Tabs.Raid:AddToggle("ToggleLaw", {Title = "Auto Raid Law", Default = false })
 
 ToggleLaw:OnChanged(function(Value)
     Auto_Law = Value
@@ -5612,9 +5639,13 @@ end)
 --------------------------------------------------------------------------------------------------------------------------------------------
 --RaceV4
 
+Tabs.Race:AddParagraph({
+    Title = "Race Section"
+    Content = "Race functions."
+})
 
 Tabs.Race:AddButton({
-    Title = "Tuam Tsev Teev Ntuj (templeoftime)",
+    Title = "TP to Temple of Time",
     Description = "",
     Callback = function()
         game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28286.35546875, 14895.3017578125, 102.62469482421875)
@@ -5623,7 +5654,7 @@ Tabs.Race:AddButton({
 
 
 Tabs.Race:AddButton({
-    Title = "Lever Pull",
+    Title = "TP to Pull Lever Place",
     Description = "",
     Callback = function()
         TP2(CFrame.new(28575.181640625, 14936.6279296875, 72.31636810302734))
@@ -5632,7 +5663,7 @@ Tabs.Race:AddButton({
 
 
 Tabs.Race:AddButton({
-    Title = "Ancient Ib",
+    Title = "TP to Ancient One",
     Description = "",
     Callback = function()
         TP2(CFrame.new(28981.552734375, 14888.4267578125, -120.245849609375))
@@ -5642,12 +5673,12 @@ Tabs.Race:AddButton({
 
 Tabs.Race:AddParagraph({
     Title = "Auto Race",
-    Content = ""
+    Content = "Auto do Race quest and more."
 })
 
 
 Tabs.Race:AddButton({
-    Title = "Qhov rooj sib tw (racedoor)",
+    Title = "TP to Race Door",
     Description = "",
     Callback = function()
         Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28286.35546875, 14895.3017578125, 102.62469482421875) 
@@ -5675,14 +5706,14 @@ Tabs.Race:AddButton({
 })
 
 
-local ToggleHumanandghoul = Tabs.Race:AddToggle("ToggleHumanandghoul", {Title = "Auto [Human / Ghoul] Kev sim", Default = false })
+local ToggleHumanandghoul = Tabs.Race:AddToggle("ToggleHumanandghoul", {Title = "Auto Human and Ghoul Race Trial", Default = false })
 ToggleHumanandghoul:OnChanged(function(Value)
     KillAura = Value
 end)
 Options.ToggleHumanandghoul:SetValue(false)
 
 
-local ToggleAutotrial = Tabs.Race:AddToggle("ToggleAutotrial", {Title = "Pib sim (autotrial)", Default = false })
+local ToggleAutotrial = Tabs.Race:AddToggle("ToggleAutotrial", {Title = "Auto Trial Race", Default = false })
 ToggleAutotrial:OnChanged(function(Value)
     _G.AutoQuestRace = Value
 end)
@@ -5808,8 +5839,8 @@ end)
 
 
 Tabs.Race:AddParagraph({
-    Title = "Lwm haiv neeg",
-    Content = "Lwm haiv neeg"
+    Title = "Auto Race Quest",
+    Content = "Auto Ancient Quest"
 })
 
 
@@ -5897,7 +5928,12 @@ end)
 --------------------------------------------------------------------------------------------------------------------------------------------
 --shop
 
-local ToggleRandomBone = Tabs.Shop:AddToggle("ToggleRandomBone", {Title = "Random pob txha (ranbone)", Default = false })
+Tabs.Shop:AddParagraph({
+    Title = "Shop Section"
+    Content = "Shop Function"
+})
+
+local ToggleRandomBone = Tabs.Shop:AddToggle("ToggleRandomBone", {Title = "Random Bone", Default = false })
 ToggleRandomBone:OnChanged(function(Value)  
 		_G.AutoRandomBone = Value
 end)
@@ -5919,7 +5955,7 @@ spawn(function()
 
 
 Tabs.Shop:AddButton({
-	Title = "Geppo",
+	Title = "Buy Geppo",
 	Description = "",
 	Callback = function()
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Geppo")
@@ -5929,7 +5965,7 @@ Tabs.Shop:AddButton({
 
 
 Tabs.Shop:AddButton({
-	Title = "Buso Haki",
+	Title = "Buy Buso Haki",
 	Description = "",
 	Callback = function()
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Buso")
@@ -5940,7 +5976,7 @@ Tabs.Shop:AddButton({
 
 
 Tabs.Shop:AddButton({
-	Title = "Soru",
+	Title = "Buy Soru",
 	Description = "",
 	Callback = function()
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Soru")
@@ -5949,7 +5985,7 @@ Tabs.Shop:AddButton({
 
 
 Tabs.Shop:AddButton({
-	Title = "Ken Haki",
+	Title = "Buy Ken Haki",
 	Description = "",
 	Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("KenTalk","Buy")
@@ -5959,7 +5995,7 @@ Tabs.Shop:AddButton({
 
 Tabs.Shop:AddParagraph({
 	Title = "Fighting Style",
-	Content = ""
+	Content = "Buy the fighting style you wanted."
 })
 
 
@@ -6040,12 +6076,12 @@ Tabs.Shop:AddButton({
 
 
 Tabs.Shop:AddParagraph({
-	Title = "cov khoom",
+	Title = "More Shop Function",
 	Content = ""
 })
 
 Tabs.Shop:AddButton({
-	Title = "Rov qab Stats (refundstats)",
+	Title = "Refund your Stats ( fragments )",
 	Description = "",
 	Callback = function()
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Refund","1")
@@ -6053,7 +6089,7 @@ Tabs.Shop:AddButton({
 	end
 })
 Tabs.Shop:AddButton({
-	Title = "Reroll haiv neeg (rerollrace)",
+	Title = "Reroll your Race",
 	Description = "",
 	Callback = function()
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Reroll","1")
@@ -6063,8 +6099,13 @@ Tabs.Shop:AddButton({
 --------------------------------------------------------------------------------------------------------------------------------------------
 --misc
 
+Tabs.Misc:AddParagraph({
+    Title = "Miscellaneous Section"
+    Content = "Misc Functions."
+})
+
 Tabs.Misc:AddButton({
-	Title = "Rov koom nrog Server (rejoinserver)",
+	Title = "Rejoin this Server",
 	Description = "",
 	Callback = function()
 		game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
@@ -6190,7 +6231,7 @@ Number = math.random(1, 1000000)
 
 
 Tabs.Misc:AddButton({
-	Title = "Hop Server Low Player",
+	Title = "Hop to Server that have less Player",
 	Description = "",
 	Callback = function()
 		getgenv().AutoTeleport = true
@@ -6241,8 +6282,8 @@ Tabs.Misc:AddButton({
 })
 
 Tabs.Misc:AddParagraph({
-	Title = "Qhib Ui (openui)",
-	Content = ""
+	Title = "UI Section",
+	Content = "Open any UI instantly."
 
 })
 Tabs.Misc:AddButton({
@@ -6257,9 +6298,12 @@ Tabs.Misc:AddButton({
 
 
 Tabs.Misc:AddButton({
-	Title = "Xim Haki (colorhaki)",
+	Title = "Color Haki",
 	Description = "",
 	Callback = function()
 		game.Players.localPlayer.PlayerGui.Main.Colors.Visible = true
 	end
 })
+
+
+-- Script Made by Hapor Dev
